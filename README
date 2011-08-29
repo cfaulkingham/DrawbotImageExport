@@ -1,0 +1,3 @@
+The class file is under /ImageExport/bin/
+via command line run,
+java ImageExport <input_file_name> <export_file_Name>
