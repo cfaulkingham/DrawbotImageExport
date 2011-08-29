@@ -1,3 +1,9 @@
+
+You must first convert your file to not exceed 128 pixels as your longest dimension. 
+Higher contrast files will also work better.
+
+This application converts a JPG image into a set of pixel values between 0 - 10 for the Drawbot.
+
 The class file is under /ImageExport/bin/
 via command line run,
 java ImageExport <input_file_name> <export_file_Name>
