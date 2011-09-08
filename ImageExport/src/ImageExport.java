@@ -49,18 +49,19 @@ public class ImageExport extends Component {
     					int green = (pixel >> 8) & 0xff;
     					int blue = (pixel) & 0xff;
     					int med = (red+green+blue) / 3;
-    					int out = med / 25;
+    					int out = med / 26;
        					//System.out.print(out);
     					String text;
-    					if(j==0){
-    						text = ""+out;
-    					}
-    					else{
-    						text=","+out;
-    					}
+    					//if(j==0){
+    					//	text = ""+out;
+    					//}
+    					//else{
+    					//	text=","+out;
+    					//}
+    					text =""+out;
     					output.write(text);
     				}
-   		 			output.write("\n");
+   		 			output.write("\r");
 
     			}
     			output.close();
