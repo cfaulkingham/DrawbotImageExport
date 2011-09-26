@@ -41,7 +41,35 @@ public class ImageExport extends Component {
     			int w = img.getWidth();
     			int h = img.getHeight();
     			System.out.print("W:"+w+"xH:"+h);
+    			
+    			String front="";
+				String back="";
+			
+				if(w < 128){
+					int diff = (128 - w);
+					double remain = diff % 2;
+					
+					int f = (int)(remain + .05)+(diff/2);
+					System.out.print((remain + .05)+"<<<\n");
+					int b = (int)diff / 2;
+
+					for (int t=0;t<f;t++){
+						front+=""+"9";
+					}
+					for(int t=0;t<b;t++){
+						back+=""+"9";
+					}
+					System.out.print(front.length()+"\n");
+
+					System.out.print(back.length()+"\n");					
+				
+				}
+    			
+    			
     			for (int i=0; i<h; i++){
+    				
+    				output.write(front);
+
     				for (int j=0; j<w; j++){   
     					int pixel = img.getRGB(j, i);
     					//int alpha = (pixel >> 24) & 0xff;
@@ -52,16 +80,11 @@ public class ImageExport extends Component {
     					int out = med / 26;
        					//System.out.print(out);
     					String text;
-    					//if(j==0){
-    					//	text = ""+out;
-    					//}
-    					//else{
-    					//	text=","+out;
-    					//}
-    					text =""+out;
+    				
+    					text = ""+out;
     					output.write(text);
     				}
-   		 			output.write("\r");
+   		 			output.write(back+"\r");
 
     			}
     			output.close();
